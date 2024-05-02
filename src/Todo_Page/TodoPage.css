@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #545454;
+}
+
+/* Header area start */
+
+.todoHeader {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.burgerMenu {
+  margin: 5%;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #000000;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.burgerChange .bar1 {
+  transform: translate(0, 11px) rotate(135deg);
+}
+
+.burgerChange .bar2 {
+  opacity: 0;
+}
+
+.burgerChange .bar3 {
+  transform: translate(0, -11px) rotate(-135deg);
+}
+
+.NewTodo {
+  margin: 5%;
+  background: #107434;
+  border: 1px solid #323232;
+  font-size: 5rem;
+  padding: 2px 5px;
+  font-size: 1rem;
+  border-radius: 5rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+/* Header area end */
+
+/* Todo area start */
+
+.todos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: start;
+}
+
+.todo {
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+.todoitems {
+  list-style: none;
+}
+
+.todoitem {
+}
+
+/* Todo area end */

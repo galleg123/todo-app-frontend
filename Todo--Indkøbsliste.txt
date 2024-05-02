@@ -1,0 +1,33 @@
+Login side:
+- Brugernavn - text
+- Password - password / text (toggle button)
+- Login - Button
+- Register - Button
+
+
+Main page:
+- "bobler" med muligheder
+-- Todo
+-- Chat
+-- Indkøbsliste
+-- Kalender
+-- Settings
+
+
+
+Todo:
+- Create new todo - Button
+- Todo list - list
+-- Todo item - card
+
+Chat:
+- Chatfield?
+- Messagefield?
+- Send button?
+
+Indkøbslist:
+- Basically ligesom todo
+
+Kalender:
+- Kan indtaste ting man skal.
+- Evt have en tab hvor den bare lister de items man har indtastet man skal i chronological rækkefølge.
