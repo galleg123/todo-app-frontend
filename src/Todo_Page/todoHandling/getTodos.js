@@ -3,8 +3,7 @@ export const getTodos = async () => {
   // PASS IN THE USERID FROM COOKIES?
 
   const apiUrl = "http://localhost:3001/api/notes";
-  const apiKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFhNDhkMWNiLTMzNGItNDlmZS1iM2RlLTFiZjdmMWVkYjY5YSIsInVzZXJuYW1lIjoiTWlra2VsIiwiaWF0IjoxNzEzNzY3MTE4fQ.UQg-4gzOI6Es1gLByEZl4cNmBaAqi6_6CSXXsZHo5Ww";
+  const apiKey = localStorage.getItem("token");
   const res = [];
   try {
     const response = await fetch(apiUrl, {

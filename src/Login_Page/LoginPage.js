@@ -24,8 +24,30 @@ function LoginPage() {
     }
   };
 
-  const handleLogin = () => {
-    console.log(
+  const handleLogin = async () => {
+    const data = {
+        username,
+        password}
+    const requestOptions = {
+        method: "POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(data),}
+    
+        console.log("This is the requestOptions:", requestOptions);
+      try{
+        const response = await fetch("http://localhost:3001/user/signin", 
+            requestOptions,);
+
+        const {token} = await response.json();
+
+        localStorage.setItem("token", token);
+        console.log(token);
+        const tokenTest = localStorage.getItem("token");
+        console.log("This is the test one:", tokenTest);
+    }catch(e){
+        console.log("Error occured when logging in:", e);
+    }
+      console.log(
       `You logged in with username: ${username} and password: ${password}`
     );
     setUsername("");
