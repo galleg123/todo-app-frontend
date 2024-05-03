@@ -86,7 +86,7 @@ function LoginPage() {
               id="passwordToggle"
               onClick={() => togglePasswordHide()}
             />
-            <label htmlFor="passwordToggle">Show/Hide Password</label>
+            <label className={styles.showHide} htmlFor="passwordToggle">Show/Hide Password</label>
           </div>
 
           <div className={styles.btnsContainer}>

@@ -1,13 +1,13 @@
-export const postTodo = async (title) => {
-  const apiUrl = "http://localhost:3001/api/notes";
+export const updateTodo = async (id, status) => {
+  const apiUrl = `http://localhost:3001/api/notes/${id}`;
   const apiKey = localStorage.getItem("token");
 
   const data = {
-    title,
+    status,
   };
 
   const requestOptions = {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
@@ -19,12 +19,8 @@ export const postTodo = async (title) => {
     const response = await fetch(apiUrl, requestOptions);
     const { data } = await response.json();
 
-    const note = {
-      title: data.title,
-      status: data.status,
-      id: data.id,
-    };
-    return note;
+
+    return data;
   } catch (error) {
     console.error("Error occured in post of todo", error);
   }
