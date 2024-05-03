@@ -33,7 +33,6 @@ function LoginPage() {
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(data),}
     
-        console.log("This is the requestOptions:", requestOptions);
       try{
         const response = await fetch("http://localhost:3001/user/signin", 
             requestOptions,);
@@ -41,9 +40,6 @@ function LoginPage() {
         const {token} = await response.json();
 
         localStorage.setItem("token", token);
-        console.log(token);
-        const tokenTest = localStorage.getItem("token");
-        console.log("This is the test one:", tokenTest);
     }catch(e){
         console.log("Error occured when logging in:", e);
     }
