@@ -1,7 +1,9 @@
 import { useState } from "react";
-// import "./LoginPage.css";
+import { useNavigate } from "react-router-dom";
+import styles from "./LoginPage.module.css";
 
 function LoginPage() {
+  let navigate = useNavigate();
   const [passwordMode, setPasswordMode] = useState("password");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -28,6 +30,7 @@ function LoginPage() {
     );
     setUsername("");
     setPassword("");
+    navigate("/todos");
   };
 
   const handleRegister = () => {
@@ -40,13 +43,13 @@ function LoginPage() {
 
   return (
     <>
-      <div className="container">
-        <div className="login-container">
+      <div className={styles.container}>
+        <div className={styles.loginContainer}>
           <input
             type="text"
             id="username"
             placeholder="Username"
-            className="text-field"
+            className={styles.textField}
             value={username}
             onChange={usernameChange}
           />
@@ -54,12 +57,12 @@ function LoginPage() {
             type={passwordMode}
             id="password"
             placeholder="Password"
-            className="text-field"
+            className={styles.textField}
             value={password}
             onChange={passwordChange}
           />
 
-          <div className="password-box">
+          <div className={styles.passwordBox}>
             <input
               type="checkbox"
               id="passwordToggle"
@@ -68,9 +71,13 @@ function LoginPage() {
             <label htmlFor="passwordToggle">Show/Hide Password</label>
           </div>
 
-          <div className="btns-container">
-            <button onClick={handleLogin}>Login</button>
-            <button onClick={handleRegister}>Register</button>
+          <div className={styles.btnsContainer}>
+            <button className={styles.button} onClick={handleLogin}>
+              Login
+            </button>
+            <button className={styles.button} onClick={handleRegister}>
+              Register
+            </button>
           </div>
         </div>
       </div>

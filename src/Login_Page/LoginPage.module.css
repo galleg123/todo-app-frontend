@@ -4,12 +4,9 @@
   box-sizing: border-box;
 }
 
-div {
+.container {
   display: flex;
   font-family: sans-serif;
-}
-
-.container {
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -17,7 +14,9 @@ div {
   background-color: #545454;
 }
 
-.login-container {
+.loginContainer {
+  display: flex;
+  font-family: sans-serif;
   padding: 20px 20px;
   justify-content: center;
   flex-wrap: wrap;
@@ -27,7 +26,7 @@ div {
   border: 2px solid black;
 }
 
-.text-field {
+.textField {
   margin: 2px;
   padding: 2px;
   height: 2rem;
@@ -35,19 +34,21 @@ div {
   border: 1px solid black;
 }
 
-.password-box {
+.passwordBox {
   /* justify-content: center; */
+  display: flex;
+  font-family: sans-serif;
   align-items: center;
   font-size: 1rem;
 }
 
-.btns-container {
+.btnsContainer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin-top: 10px;
 }
-.btns-container button {
+.button {
   background: #107434;
   border: 1px solid #323232;
   padding: 2px 5px;
