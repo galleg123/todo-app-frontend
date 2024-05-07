@@ -11,63 +11,36 @@ div {
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: #F3f3f2;
+  background-color: #f3f3f2;
 }
 
 /* Header area start */
 
-.todoHeader {
+.header {
   height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #aed0e2
+  background-color: #aed0e2;
 }
 
-.burgerMenu {
-  padding-left: calc(3rem + 20px);
+.newTodoForm {
+  display: flex;
+  align-items: center;
+  padding-right: calc(3rem + 20px);
 }
 
-.bar1,
-.bar2,
-.bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #204567;
-  margin: 6px 0;
-  transition: 0.4s;
-  border-radius: 5px;
-}
-
-.burgerChange .bar1 {
-  transform: translate(0, 11px) rotate(135deg);
-}
-
-.burgerChange .bar2 {
-  opacity: 0;
-}
-
-.burgerChange .bar3 {
-  transform: translate(0, -11px) rotate(-135deg);
-}
-
-.newTodoForm{
-    display: flex;
-    align-items: center;
-    padding-right: calc(3rem + 20px);
-}
-
-.newTodoText{
-    box-sizing: border-box;
-    padding:15px;
-    width: 15rem;
-    height: 35px;
-    border: none;
-    outline: none;
-    border-radius: 15px 0px 0px 15px;
-    text-decoration: none;
-    background-color: #f3f3f2;
-    transform: translate(15px);
+.newTodoText {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 15rem;
+  height: 35px;
+  border: none;
+  outline: none;
+  border-radius: 15px 0px 0px 15px;
+  text-decoration: none;
+  background-color: #f3f3f2;
+  transform: translate(15px);
 }
 
 .button_plus {
@@ -83,7 +56,7 @@ div {
 }
 
 .button_plus:after {
-  content: '';
+  content: "";
   position: absolute;
   transform: translate(-50%, -50%);
   height: 4px;
@@ -94,7 +67,7 @@ div {
 }
 
 .button_plus:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -118,7 +91,7 @@ div {
 .NewTodo {
   margin: 0;
   font-size: 5rem;
-  background:none;
+  background: none;
   border: none;
   align-items: center;
   justify-content: center;
@@ -129,8 +102,8 @@ div {
 /* Todo area start */
 
 .todos {
-    padding: 3rem;
-    display: grid;
+  padding: 3rem;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: start;
@@ -142,19 +115,17 @@ div {
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
-  
 }
-.todoTitle{
-    color:#204567;
+.todoTitle {
+  color: #204567;
 }
-.todoTitle:hover{
-    color:#aed0e2;
-    cursor: pointer;
-}
-
-.deleteButton{
-    margin-top: 5px;
+.todoTitle:hover {
+  color: #aed0e2;
+  cursor: pointer;
 }
 
+.deleteButton {
+  margin-top: 5px;
+}
 
 /* Todo area end */

@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f3f2;
+}
+
+/* Header area start */
+
+.header {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #aed0e2;
+}
+
+.newFriendForm {
+  display: flex;
+  align-items: center;
+  padding-right: calc(3rem + 20px);
+}
+
+.addFriendText {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 15rem;
+  height: 35px;
+  border: none;
+  outline: none;
+  border-radius: 15px 0px 0px 15px;
+  text-decoration: none;
+  background-color: #f3f3f2;
+  transform: translate(15px);
+}
+
+.button_plus {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 15px;
+  background: #f3f3f2;
+  cursor: pointer;
+  border: 2px solid #204567;
+
+  /* Mittig */
+}
+
+.button_plus:after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 50%;
+  background: #204567;
+  top: 50%;
+  left: 50%;
+}
+
+.button_plus:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #204567;
+  height: 50%;
+  width: 4px;
+}
+
+.button_plus:hover:before,
+.button_plus:hover:after {
+  background: #f3f3f2;
+  transition: 0.2s;
+}
+
+.button_plus:hover {
+  background-color: #204567;
+  transition: 0.2s;
+}
+
+.newFriend {
+  margin: 0;
+  font-size: 5rem;
+  background: none;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header area end */
+
+/* Friend Area start */
+
+.deleteButton {
+  margin-top: 5px;
+}
+
+/* Friend Area end */

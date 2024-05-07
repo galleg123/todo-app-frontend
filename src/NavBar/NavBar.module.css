@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  list-style: none;
+  font-family: sans-serif;
+  font-size: 24px;
+  padding-left: calc(3rem + 20px);
+  justify-content: space-between;
+}
+
+.nav li {
+  padding-right: 20px;
+  color: #204567;
+}
+
+.link {
+  text-decoration: none;
+}
+.link::after {
+  color: #204567;
+}
+
+a:-webkit-any-link {
+  color: #204567;
+  text-decoration: none;
+}
+
+.nav li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

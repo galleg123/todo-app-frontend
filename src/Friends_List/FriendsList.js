@@ -1,58 +1,60 @@
-import { useState } from "react"
-import styles from "FriendsList.module.css"
+import { useState } from "react";
+import styles from "./FriendsList.module.css";
+import NavBar from "../NavBar/NavBar";
 
 function FriendsList() {
+  const [friends, setFriends] = useState([]);
+  const [addFriendText, setAddFriendText] = useState("");
 
-    const [friends, setFriends] = useState([]);
-    const [addFriendText, setAddFriendText] = useState("");
-    const [burgerState, setBurgerState] = useState(false);
+  const handleAddFriendChange = (e) => {
+    setAddFriendText(e.target.value);
+  };
 
-    const handleAddFriendChange = (e) =>{
-        setAddFriendText(e.target.value);
-    }
+  const handleAddFriend = (friendToAdd) => {
+    const updatedFriendsList = [...friends, friendToAdd];
+    setFriends(updatedFriendsList);
+  };
 
-    const handleAddFriend = (friendToAdd) => {
-        const updatedFriendsList = [...friends, friendToAdd];
-        setFriends(updatedFriendsList);
-    }
+  const handleRemoveFriend = (event, friendId) => {
+    event.preventDefault();
+    const newFriendsList = friends.filter((friend) => friend.id !== friendId);
+    setFriends(newFriendsList);
+  };
 
-    const handleRemoveFriend = (friendToRemove) => {
-        const newFriendsList = friends.filter((friend) => friend !== friendToRemove);
-        setFriends(newFriendsList);
-    }
-
-    
-    const burgerToggle = () => {
-        setBurgerState(!burgerState);
-    };
-
-
-
-    return <> 
-             <div className={styles.container}>
-                <header className={styles.todoHeader}>
-                    <div
-                        className={`${styles.burgerMenu} ${burgerState ? styles.burgerChange : ""}`}
-                        onClick={burgerToggle}
-                    >
-                        <div className={styles.bar1}></div>
-                        <div className={styles.bar2}></div>
-                        <div className={styles.bar3}></div>
-                    </div>
-                    <form onSubmit={handleAddFriend} className={styles.newTodoForm}>
-                        <input
-                            type="text"
-                            value={addFriendText}
-                            className={styles.addFriendText}
-                            onChange={handleAddFriendChange}
-                            placeholder="Add Friend"
-                        ></input>
-                        <button type="submit" className={styles.NewTodo}><div className={styles.button_plus}></div></button>
-                    </form>
-                    
-                </header>
-            </div>           
-        </>
+  return (
+    <>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <NavBar />
+          <form onSubmit={handleAddFriend} className={styles.newFriendForm}>
+            <input
+              type="text"
+              value={addFriendText}
+              className={styles.addFriendText}
+              onChange={handleAddFriendChange}
+              placeholder="Add Friend"
+            ></input>
+            <button type="submit" className={styles.newFriend}>
+              <div className={styles.button_plus}></div>
+            </button>
+          </form>
+        </header>
+        <div className={styles.friends}>
+          {friends.map((friend) => {
+            return (
+              <div className={styles.friend} key={friend.id}>
+                <h1 className="friendName">{friend.username}</h1>
+                <button
+                  className={styles.removeFriend}
+                  onClick={(event) => handleRemoveFriend(event, friend.id)}
+                ></button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default FriendsList;
