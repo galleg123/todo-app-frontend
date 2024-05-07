@@ -8,7 +8,7 @@ function NavBar() {
         <ul className={styles.nav}>
           <li>
             <Link to="/todos" className={styles.link}>
-              TODOS
+              TO-DOS
             </Link>
           </li>
           <li>

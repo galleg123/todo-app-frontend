@@ -71,14 +71,6 @@ function TodoPage() {
     <>
       <div className={styles.container}>
         <header className={styles.header}>
-          {/* <div
-                        className={`${styles.burgerMenu} ${burgerState ? styles.burgerChange : ""}`}
-                        onClick={burgerToggle}
-                    >
-                        <div className={styles.bar1}></div>
-                        <div className={styles.bar2}></div>
-                        <div className={styles.bar3}></div>
-                    </div> */}
           <NavBar />
           <form onSubmit={handleNewTodoSubmit} className={styles.newTodoForm}>
             <input
@@ -86,7 +78,7 @@ function TodoPage() {
               value={newTodoText}
               className={styles.newTodoText}
               onChange={handleNewTodoChange}
-              placeholder="New Todo"
+              placeholder="New To-do"
             ></input>
             <button type="submit" className={styles.NewTodo}>
               <div className={styles.button_plus}></div>
